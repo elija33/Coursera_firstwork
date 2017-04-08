@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="LunchCheck">
   <head>
     <meta charset="utf-8">
-    <title>My Frist Singl Page</title>
+    <script src="angular.min.js"></script>
+    <script src = "app.js"></script>
+    <title>Lunch Checker is Good</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
   </head>
-  <body>
+    <body>
+      <div class="container" ng-controller="LunchCheckController">
+        <h1>Luch Checker</h1>
+          <div class="form-group">
+              <input id="lunch-meanu" type="text" placeholder="list comma separated dishes you usually have for lunch" class="form-control"
+                              ng-model="lunchItems" ng-class="msg_ok ? 'input_green' : 'input_red'">
+              </div>
+              <br>
+                  <!--<div class="note">
+                        NOTE: Items like ",," or ", ," are considered empty and discarded while calculation.
+                  </div>-->
+                    <div class="form-group">
+                      <button class="btn btn-default" ng-click="checkIfTooMuch()">Check Of Too Muck</button>
+                    </div>
+                      <div class="form-group message" ng-class=msg_ok ? 'green' : 'red'>
+                          <!--message can go here-->
+                            {{message}}
 
-  </body>
+                    </div>
+          </div>
+      </body>
 </html>
